@@ -1,3 +1,6 @@
+p{
+  text-align: justify !important;
+}
 li a:hover {
   color: #0d6efd;
 }
@@ -17,4 +20,743 @@ li a:hover {
 }
 .im{
   height: 150px !important;
+}
+
+/* ===============================jobseeker dashboard============================================ */
+.jobeekerDash ul li a {
+   font-family:"Noto Sans JP", sans-serif;
+  font-weight: 600;
+  font-size: 1.24rem;
+  /* color: #ffffff !important; */
+  font-style: normal;
+}
+.icon{
+  font-size: 1.7rem;
+  color: black;
+}
+/* .jobtitle{
+  font-size: 1.3rem;
+}
+.jobsubtitle{
+  font-size: 1.2rem;
+}
+.list{
+  font-size: 0.9rem;
+}
+.postedtime{
+  font-size: 0.8rem;
+} */
+ .jobtitle {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.jobsubtitle {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+.list {
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+.job-img{
+  height: 215px !important;
+  object-fit: cover;
+}
+.overflowContent{
+  overflow: hidden !important;
+}
+.rightHead{
+  font-size: 1.1rem;
+}
+.rightpara{
+  font-size: 0.8rem;
+}
+.tine small{
+  font-size: 0.7rem;
+}
+.skill{
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+.profile-dropdown .dropdown-menu {
+  margin-top: 0;
+  right: 20px;
+  transition: display 1s ease;
+  background-color: #6ea8ff;
+}
+.profile-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.hoverColor:hover > a{
+  background-color: #5c9af8 !important;
+}
+.skills-section {
+  padding: 20px;
+}
+
+.skills-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skill-tag {
+  padding: 10px 18px;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #333;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.skill-tag:hover {
+  color: white;
+  transform: scale(1.1);
+}
+.education-section {
+  padding: 20px;
+}
+
+.timeline {
+  position: relative;
+  margin-left: 20px;
+}
+
+.timeline-item {
+  margin-bottom: 20px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 5px;
+  width: 15px;
+  height: 15px;
+
+  border-radius: 50%;
+}
+
+.timeline-item h4 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.timeline-item span {
+  font-size: 14px;
+  color: gray;
+}
+.bagde span{
+  font-size: 0.93rem;
+  font-weight: 500 !important;
+  background-color: #13367bc5;
+  color: white;
+}
+
+.mainbtn{
+  background-color: #13357B !important;
+  border: 1px solid #13357B !important;
+  color: white !important;
+  font-size: 900 !important;
+  border-radius: 20px !important;
+}
+
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .text-end {
+    text-align: left !important;
+    margin-top: 10px;
+  }
+}
+.sizep{
+  font-size: 0.95rem;
+}
+.sizepara{
+  font-size: 1.2rem;
+}
+.project-card {
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+}
+
+.project-card img {
+  height: 180px;
+  object-fit: cover;
+}
+
+.tech {
+  font-size: 13px;
+  color: gray;
+  margin-bottom: 10px;
+}
+.card{
+  background-color: transparent !important;
+}
+.form-bg {
+  background: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d') no-repeat center center/cover;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-card {
+  background: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  padding: 25px;
+}
+
+.skill2 marquee ul li {
+  background-color: rgba(0,0,0,0.1) ;
+  /* color: #b3cde0; */
+  color:rgb(19,52,123);
+  /* border: 1px solid rgb(19,52,123); */
+  /* #13357B */
+}
+.link{
+  color: #E2E8F0 !important;
+}
+.card {
+  border-radius: 15px;
+  border: none;
+  background: #ffffff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  transition: 0.3s;
+}
+.search-box {
+  border-radius: 25px !important;
+  border: none !important;
+  padding: 10px 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+}
+.search-box:hover{
+  border: 1px solid #13357B !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+}
+.job-card {
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+}
+.suggestedjobbtn{
+  border: 1px solid rgb(7, 37, 97) !important;
+  color: rgb(7, 37, 97) !important;
+  font-weight: 500 !important;
+}
+.skill3 span{
+  color: #13357B;
+}
+input:hover,textarea:hover{
+  box-shadow: 0px 0px 5px #13367bcb !important;
+}
+/* ============================Login============================================== */
+.formStyle{
+  border-radius: 20px 0px 0px 20px;
+}
+
+.imageStyle{
+  border-radius: 0px 20px 20px 0px;
+}
+
+/* ==========================home page====================================== */
+:root {
+  --primary: #072258;
+  --secondary: #8494FF;
+  --soft: #C9BEFF;
+  --accent: #FFDBFD;
+
+  --bg: #ffffff;
+  --text: #1a1a1a;
+  --card-bg: #ffffff;
+  --filter: invert(0);
+}
+
+[data-theme="dark"] {
+  --primary: #476EAE;
+  --secondary: #48B3AF;
+  --soft: #A7E399;
+  --accent: #F6FF99;
+
+  --bg: #0f172a;
+  --text: #f4f6f8;
+  --card-bg: #1e293b;
+  --filter: invert(1);
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  transition: 0.3s;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border-radius: 15px;
+  transition: 0.3s;
+  color: var(--text);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* TESTIMONIAL */
+[data-theme="dark"] .bg-white {
+  background-color: var(--card-bg) !important;
+  color: var(--text) !important;
+}
+
+.btn-primary-custom {
+  background-color: var(--primary) !important;
+  color: white;
+}
+
+.btn-primary-custom:hover {
+  background-color: var(--secondary) !important;
+}
+
+.company-marquee {
+  overflow: hidden;
+  width: 100%;
+  height: 100px;
+}
+
+.marquee-inner {
+  display: flex;
+  width: max-content;
+  animation: marquee 20s linear infinite;
+}
+
+.company-logo {
+  height: 60px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+  transition: transform 0.3s ease;
+}
+
+.company-logo:hover {
+  transform: scale(1.1);
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-80%);
+  }
+}
+
+.theme-toggle {
+  width: 65px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 5px;
+  border: 2px solid var(--primary);
+}
+
+.toggle-track {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.toggle-track-scrolled {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.toggle-thumb {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--primary);
+  top: 2px;
+  transition: all 0.3s ease;
+}
+
+.thumb-dark {
+  left: 0px;
+}
+
+.thumb-light {
+  left: 33px;
+}
+
+.navbar-toggler-icon {
+  filter: var(--filter);
+}
+
+/* NORMAL TEXT */
+.hero-title, .hero-subtitle{
+  transition: 0.3s ease;
+  color: white;
+}
+
+
+/* DARK MODE NEON EFFECT */
+[data-theme="dark"] .hero-title {
+  color: var(--accent);
+  text-shadow: 
+    0 0 200px var(--primary),
+    0 0 100px var(--accent);
+    
+}
+
+[data-theme="dark"] .hero-subtitle {
+  color: var(--soft);
+  text-shadow: 
+    0 0 50px var(--primary),
+    0 0 1px var(--accent);
+}
+
+/* OFFCANVAS THEME*/
+.offcanvas {
+  background-color: var(--bg);
+  color: var(--text);
+  transition: 0.3s;
+}
+
+.offcanvas-header {
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+[data-theme="dark"] .offcanvas-header {
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.offcanvas .nav-link {
+  color: var(--text) !important;
+}
+
+.offcanvas .nav-link:hover {
+  color: var(--primary) !important;
+}
+
+.offcanvas .dropdown-menu {
+  background-color: var(--card-bg);
+  border: none;
+}
+
+.offcanvas .dropdown-item {
+  color: var(--text);
+}
+
+.offcanvas .dropdown-item:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+/* CLOSE BUTTON*/
+.btn-close {
+  filter: var(--filter);
+}
+
+/* ======================jobSeeker projecr Cards================================== */
+.project-card {
+  border-radius: 12px !important;
+  transition: 0.3s;
+  background-color: white !important;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+.navlink .navlinka{
+  color:  #ffffff !important;
+  font-weight: 700 !important;
+  font-size: 1.17rem;
+}
+
+/* default state already tumhara hoga */
+
+.loginbtn {
+  background-color: #072258 !important;
+  color: #ffffff !important;
+}
+.loginbtn a{
+  color: #ffffff !important;
+}
+.login-scrolled {
+  background-color: white !important;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+  color: #072258 !important;
+}
+.login-scrolled a {
+  color: #072258 !important;
+    font-weight: 700 !important;
+}
+
+.regisbtn {
+  color: #072258 !important;
+  box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+}
+.register-scrolled {
+  border: 1px solid 20px !important;
+    color: white !important;
+}
+
+/* hover effect (optional) */
+.login-scrolled:hover,
+.register-scrolled:hover {
+  transform: scale(1.05);
+  transition: 0.3s;
+}
+/* .loginbtn a{
+  color: white;
+  font-size: 1.09rem; */
+
+.regisbtn{
+  border: 2px solid #13357b !important;
+  color: white !important;
+}
+.lead{
+  color: white !important;
+  font-weight: 500 !important;
+  font-size: 1.5rem !important;
+
+}
+.job-card {
+  border-radius: 20px;
+  overflow: hidden;
+  background: #f8f9fa; /* off white */
+  transition: 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.job-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+/* Image */
+.job-img-wrapper {
+  height: 180px;
+  overflow: hidden;
+}
+
+.job-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.4s;
+}
+
+.job-card:hover img {
+  transform: scale(1.08);
+}
+
+/* Text */
+.card-title {
+  color: #13357b;
+}
+
+.company {
+  color: rgba(0,0,0,0.7);
+}
+
+.location,
+.salary {
+  color: rgba(0,0,0,0.5);
+}
+
+/* Badges */
+.custom-badge {
+  background-color: #13357b;
+  color: white;
+  font-size: 0.75rem;
+}
+
+.custom-badge-light {
+  background-color: rgb(0,0,0,0.3);
+  color: #13357b !important;
+  font-size: 0.75rem;
+}
+
+/* Button */
+.apply-btn {
+  background-color: #13357b;
+  color: white;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.apply-btn:hover {
+  background-color: white;
+  color: #13357b;
+  border: 1px solid #13357b;
+}
+
+/* =============================================aboutsection========================= */
+/* Title */
+.about-title {
+  color: white;
+  font-weight: 700;
+}
+
+/* Text */
+.about-text {
+  color:#c6dbef;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+/* List */
+
+/* Button */
+.about-btn {
+  background-color: #9ecae1 !important;
+  color: #072258 !important;
+  padding: 8px 20px !important;
+  transition: 0.3s;
+  font-weight: 700 !important;
+  font-size: 1.1rem !important;
+}
+
+.about-btn:hover {
+  background-color: white;
+  color: #13357b;
+  border: 1px solid #13357b;
+}
+.trandingJob{
+  background-repeat: no-repeat !important;
+  background-size: cover;
+}
+.accordion-button{
+ border: 1px solid #072258 !important;
+ margin-bottom: 5px;
+  box-shadow: none !important;
+ border-radius: 12px !important; 
+ font-weight: 500 !important;
+}
+.custom-accordion .accordion-button:not(.collapsed) {
+  background-color: #072258;  /* tumhara main color */
+   border-radius: 12px 12px 0px 0px !important; 
+
+  color: white;
+}
+.accordion-item{
+  margin-bottom: 5px !important;
+}
+
+/* Jab closed ho */
+.custom-accordion .accordion-button.collapsed {
+  background-color: white;
+  box-shadow: none !important;
+  color: #072258;
+}
+.accordion-collapse{
+  border: 1px solid #072258;
+}
+.accordion-body{
+  color: #072258 !important;
+  font-weight: 500 !important;
+}
+
+/* Button */
+/* .custom-accordion .accordion-button {
+  background-color: #072258;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+} */
+
+/* Body */
+/* .custom-accordion .accordion-body {
+  background: white;
+  color: rgba(0,0,0,0.7);
+  line-height: 1.6;
+} */
+
+/* ==============================team =========================== */
+.team-section {
+  background: #f8f9fa;
+}
+
+.team-title {
+  color: white;
+}
+
+.team-subtitle {
+  color: #9ecae1;
+}
+
+/* Card */
+.team-card {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  transition: 0.3s;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.team-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgb(158, 202, 225,0.2);
+}
+
+/* Image */
+.team-card img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #9ecae1;
+  margin-bottom: 10px;
+}
+
+/* Role */
+.role {
+  display: block;
+  font-size: 0.85rem;
+  color: #8cb5ca;
+  margin-bottom: 8px;
+  font-weight: 500 ;
+}
+.title{
+  color: #072258 !important;
+}
+/* Text */
+.team-card p {
+  font-size: 0.9rem;
+  color: rgba(0,0,0,0.6);
+  text-align: center !important;
+}
+.footer{
+  background-color: #072258;
+}
+.footer p{
+  color: white;
+  font-weight: 500;
+  font-size: 1.07rem;
+}
+/* ======================================My Applications=========================== */
+.applipara{
+  font-size: 1.1rem;
+  font-weight: 450;
 }
