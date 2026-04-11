@@ -11,7 +11,15 @@ import Enquiry from "./JobSeeker/Enquiry";
 import Login from "./Pages/Login";
 import { ToastContainer } from "react-toastify";
 import Sdfg from "./JobSeeker/sdfg";
+import 'swiper/css';
 import Jobseek_Application from "./JobSeeker/Jobseek_Application";
+import EmpSidebar from "./Employer/EmpSidebar";
+import EmpDash from "./Employer/EmpDash";
+import EmpViewApp from "./Employer/EmpViewApp";
+import EmpPostJob from "./Employer/EmpPostJob";
+import EmpAddEnq from "./Employer/EmpAddEnq";
+import EmpProfile from "./Employer/EmpProfile";
+import SerachJob from "./JobSeeker/SerachJob";
 
 
 function App() {
@@ -20,13 +28,21 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/asd" element={<Sdfg />} />
+          <Route path="/Sdfg" element={<Sdfg />} />
           <Route path="/login" element={<Login />} />
           <Route path="/jobseeker/" element={<JobSLayout />}>
             <Route path="" element={<JobSeekerDash />} />
             <Route path="jobseekerprofile" element={<Profile />} />
             <Route path="enq" element={<Enquiry />} />
+            <Route path="searchJob" element={<SerachJob />} />
             <Route path="userapplication" element={<Jobseek_Application />} />
+          </Route>
+            <Route path="/employer/" element={<EmpSidebar/>} >
+            <Route path="" element={<EmpDash />} />
+            <Route path="viewApplicants" element={<EmpViewApp />} />
+            <Route path="postJob" element={<EmpPostJob />} />
+            <Route path="addEnq" element={<EmpAddEnq />} />
+            <Route path="empProfile" element={<EmpProfile />} />
           </Route>
         </Routes>
       </BrowserRouter>

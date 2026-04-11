@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import google from '../assets/amazon.png'
+import { Col, Row } from "react-bootstrap";
 
 
 function Card(p) {
@@ -231,5 +232,119 @@ function Card7(p){
   )
 }
 
+function TestimonialCard(p) {
+  return (
+    <div className="card shadow-sm border-0  px-2 py-1 bg-white" style={{ maxWidth: "350px", borderRadius: "15px" }}>
+      
+      {/* User Image */}
+      <div className="text-center">
+        <img
+          src={p.src}
+          alt="user"
+          className=" img-fluid w-100"
+         style={{height: "200px",objectFit:"cover" }}
+        />
+      </div>
+
+      {/* Review Text */}
+      <div className="card-body">
+                {/* User Name */}
+        <h5 className="fw-bold mb-2 pb-1">Diksha Kushawaha</h5>
+        <small className="py-1 px-2  rounded-pill" style={{color:"#072258",backgroundColor:" #9ecae1"}}>Software Developer</small>
+        <p className="card-text  pt-3 text-muted">
+          "This platform helped me land my dream job quickly. Super easy to use and very effective!"
+        </p>
+      </div>
+
+      {/* Rating */}
+      <div className="text-end pe-4 mb-2">
+        ⭐⭐⭐⭐⭐
+      </div>
+    </div>
+  );
+}
+
+function JobCard(p) {
+  return (
+    <div className="col-md-4 mb-3" key={p.key}>
+  <div
+  className="card border-0 shadow-sm h-100 p-2"
+  style={{
+    borderRadius: "18px",
+    transition: "0.3s",
+    cursor: "pointer",
+  }}
+>
+  <div className="card-body py-0">
+
+    {/* Top Section */}
+    <div className="d-flex align-items-center justify-content-between">
+      
+      {/* Logo + Company */}
+      <div className="d-flex align-items-center gap-2">
+        <img
+          src={google}
+          alt=""
+          style={{
+            width: "45px",
+            height: "45px",
+            objectFit: "contain",
+            borderRadius: "10px",
+            border: "1px solid #eee"
+          }}
+        />
+
+        <div>
+            <h6 className="mt-3 fw-semibold mb-0" style={{fontSize:"1.21rem"}}>{p.title}</h6>
+          {/* <h6 className="fw-bold m-0" style={{ color: "#13357b" }}>
+            {p.company}
+          </h6> */}
+          <small className="text-muted" style={{fontSize:"rem"}}> {p.company}</small>
+        </div>
+      </div>
+
+      {/* Job Type */}
+      <span className="badge bg-light text-dark border">
+        {p.type}
+      </span>
+    </div>
+
+    {/* Job Title */}
+
+
+    {/* Salary */}
+
+ <h6 className=" mt-2 fw-semibold mb-1" >{p.location}</h6>
+    {/* Description */}
+    <p className="text-success fw-semibold  m-0">
+      💰 ₹{p.salary}
+    </p>
+    <p
+      className="text-muted m-0 mt-2 px-1"
+      style={{ fontSize: "14px", lineHeight: "1.4" }}
+    >
+      {p.desc?.slice(0, 80)}...
+    </p>
+<div className="my-2">
+  <span className="fulltime me-2 px-3 py-1 rounded-5">{p.FullTime}</span>
+<span  className="fulltime px-3 py-1 rounded-5">{p.OnSite}</span>
+</div>
+    {/* Bottom Buttons */}
+    <div className="d-flex justify-content-between align-items-center mt-4 pt-2 px-2 pb-2">
+
+      <button className="btn btn-outline-primary btn-sm rounded-pill px-3 me-3">
+        View Details
+      </button>
+<button type="button" className="btn  btn-sm rounded-pill px-3 mainbtn" data-bs-toggle={p.modal} data-bs-target={p.exampleModal}>
+  Apply Now
+</button>
+    </div>
+
+  </div>
+</div>
+    </div>
+  );
+}
+
 export default Card;
-export { Card2, Card3 ,Card4,Card5,Card6,Card7};
+export { Card2, Card3 ,Card4,Card5,Card6,Card7,TestimonialCard ,JobCard};

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
-import logo from "../assets/Cologo.png";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import logo from "../assets/logo5remove.png";
 import home1 from "../assets/home5rem.png";
+import profilelogo from "../assets/profile.jpeg";
 import aboutImg from "../assets/jobseekers.jpg";
 import jeeya from "../assets/jeeya.jpeg";
 import diksha from "../assets/diksha.jpeg";
@@ -8,8 +10,10 @@ import megha from "../assets/megha.jpeg";
 import sagun from "../assets/shagun.jpeg";
 import jobvidio from "../assets/jvideo.png";
 import { Link } from "react-router-dom";
-import { Col, Row } from "react-bootstrap";
-import { Card5, Card6, Card7 } from "../Components/Card";
+import { Col, Container, Row } from "react-bootstrap";
+import { Card5, Card6, Card7, TestimonialCard } from "../Components/Card";
+import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaYoutube } from "react-icons/fa";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Home() {
   const [darkMode, setDarkMode] = useState(false);
@@ -51,11 +55,11 @@ function Home() {
           {/* OVERLAY */}
           <div
             className="position-absolute top-0 start-0 w-100 h-100"
-            style={{ background: "rgba(0,0,0,0.7)", zIndex: -1 }}
+            style={{ background: "rgba(0,0,0,0.6)", zIndex: -1 }}
           ></div>
 
           {/* Hero Section */}
-          <div className="row  py-5" style={{}}>
+          <div className="row  py-5" style={{}} id="hero">
             <div className="col-md-12  mt-5 pt-5 ps-5">
               <Row>
                 <Col sm={8} className="">
@@ -64,62 +68,75 @@ function Home() {
                     <span style={{ color: "var(--primary)" }}>Career</span>
                     <span style={{ color: "var(--soft)" }}>Setu</span>
                   </h1>
-                  <p className="lead  hero-subtitle ps-5">
-                    Connect with top employers and grow your career 🚀
+                  <p className="lead  hero-subtitle ps-5 w-75" >
+                    Connect with top talent and leading employers to grow your career or build your team.🚀
                   </p>
                   <Row className=" pt-3 ps-3">
-                    <Col sm={9} className="p-0 ps-5">
-                      <input
-                        type="text"
-                        className="form-control  py-2 rounded-start-3 rounded-end-0"
-                        placeholder="Job title..."
-                      />
+                    <Col sm={4} className="p-0 ps-5 ">
+                     <button className="btn btn-primary-custom form-control rounded-3 fw-semibold fs-5 py-2 text-white">
+                      Get Jobs
+                      </button>
                     </Col>
 
-                    <Col sm={2} className="p-0">
-                      <button className="btn btn-primary-custom rounded-start-0 rounded-end-3 px-5 py-2 text-white">
-                        Search
+                    <Col sm={4} className="p-0 px-2 pe-4">
+                      <button className="btn btn-primary-custom  form-control rounded-3 fw-semibold fs-5  py-2 text-white">
+                      Post Jobs
                       </button>
                     </Col>
                     <Col>
                       {/* Company Logo Marquee */}
                       <div className="company-marquee d-flex align-items-center justify-content-center mt-4">
                         <div className="marquee-inner d-flex align-items-center">
-                          <img
-                            src="src/assets/google.png"
-                            alt="Google"
-                            className="company-logo mx-4"
-                          />
-                          <img
-                            src="src/assets/ms.jpg"
-                            alt="Microsoft"
-                            className="company-logo mx-4"
-                          />
-                          <img
-                            src="src/assets/adobe.png"
-                            alt="Adobe"
-                            className="company-logo mx-4"
-                          />
-                          <img
-                            src="src/assets/inf.png"
-                            alt="Infosys"
-                            className="company-logo mx-4"
-                          />
-                          <img
-                            src="src/assets/tcs.png"
-                            alt="TCS"
-                            className="company-logo mx-4"
-                          />
-                          <img
-                            src="src/assets/amazon.png"
-                            alt="Amazon"
-                            className="company-logo mx-4"
-                          />
-                          <img
+                          <div className="py-3 rounded-3 companyBackground">
+                            <img
+                              src="src/assets/google.png"
+                              alt="Google"
+                              className="company-logo mx-4"
+                            />
+                          </div>
+                          <div className="py-3 rounded-3 mx-3 companyBackground">
+                            <img
+                              src="src/assets/ms.jpg"
+                              alt="Microsoft"
+                              className="company-logo mx-4"
+                            />
+                          </div>
+                          <div className="companyBackground py-3 rounded-3">
+                            <img
+                              src="src/assets/adobe.png"
+                              alt="Adobe"
+                              className="company-logo mx-4"
+                            />
+                          </div>
+                          <div className="companyBackground py-3 rounded-3 mx-3">
+                            <img
+                              src="src/assets/inf.png"
+                              alt="Infosys"
+                              className="company-logo mx-4"
+                            />
+                          </div>
+                          <div className="companyBackground py-3 px-5 rounded-3">
+                            <img
+                              src="src/assets/tcs.png"
+                              alt="TCS"
+                              className="company-logo mx-4"
+                            />
+                          </div>
+                          <div className="companyBackground py-3  px-5 rounded-3 mx-3">
+                            <img
+                              src="src/assets/amazon.png"
+                              alt="Amazon"
+                              className="company-logo mx-4"
+                            />
+                          </div>
+
+                         <div className="companyBackground py-3 px-5 rounded-3">
+                            <img
                             src="src/assets/meta.png"
                             alt="Meta"
-                            className="company-logo mx-4"
+                            className="company-logo "
                           />
+                        </div>
                         </div>
                       </div>
                     </Col>
@@ -187,22 +204,22 @@ function Home() {
                   <div className="offcanvas-body navlink">
                     <ul className="navbar-nav mx-auto   mb-lg-0 ">
                       <li className="nav-item">
-                        <a className="nav-link navlinka active" href="#">
+                        <a className="nav-link navlinka active " href="#hero">
                           Home
                         </a>
                       </li>
                       <li className="nav-item">
-                        <a className="nav-link  navlinka mx-4" href="#">
+                        <a className="nav-link  navlinka mx-4 " href="#about">
                           About
                         </a>
                       </li>
                       <li className="nav-item">
-                        <a className="nav-link  navlinka " href="#">
+                        <a className="nav-link  navlinka p-0 " href="#jobs">
                           Jobs
                         </a>
                       </li>
                       <li className="nav-item">
-                        <a className="nav-link  navlinka mx-4" href="#">
+                        <a className="nav-link  navlinka mx-4" href="#hero">
                           Companies
                         </a>
                       </li>
@@ -216,7 +233,7 @@ function Home() {
                 </div>
 
                 {/* Buttons always right end (desktop + mobile both) */}
-                <div className="d-flex ms-auto mt-lg-0 order-sm-2">
+                <div className="d-flex ms-auto mt-lg-0 order-sm-2 pe-4">
                   <button
                     className={`btn loginbtn mx-2 rounded-pill ${
                       scrolled ? "login-scrolled" : ""
@@ -238,7 +255,7 @@ function Home() {
                   </button>
                 </div>
 
-                <div className="nav-actions d-flex align-items-center ms-3">
+                {/* <div className="nav-actions d-flex align-items-center ms-3">
                   <div
                     className={`theme-toggle rounded-pill ${
                       scrolled ? "register-scrolled" : ""
@@ -256,7 +273,7 @@ function Home() {
                       ></div>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
             </nav>
           </div>
@@ -277,6 +294,7 @@ function Home() {
         {/* About Section */}
         <section
           className="py-5 ps-4 pe-3"
+          id="about"
           style={{ backgroundColor: "#072258 " }}
         >
           <div className="row px-5">
@@ -334,6 +352,7 @@ function Home() {
         {/* Trending Jobs */}
         <section
           className="py-4 trandingJob"
+          id="jobs"
           style={{
             backgroundImage: `linear-gradient(135deg, rgb(158, 202, 225,0.6)), url(${jobvidio})`,
           }}
@@ -344,15 +363,34 @@ function Home() {
           >
             Trending Jobs
           </h2>
-
-          <div className="row row-cols-1 row-cols-md-3 g-4 px-5 ">
+          <Row className="px-5 mx-2">
+             <Swiper
+      spaceBetween={15}
+      slidesPerView={4}
+      onSlideChange={() => console.log('slide change')}
+      onSwiper={(swiper) => console.log(swiper)}
+    >
+      <SwiperSlide><Card6 /></SwiperSlide>
+      <SwiperSlide><Card6 /></SwiperSlide>
+      <SwiperSlide><Card6 /></SwiperSlide>
+      <SwiperSlide><Card6 /></SwiperSlide>
+      <SwiperSlide><Card6 /></SwiperSlide>
+      <SwiperSlide><Card6 /></SwiperSlide>
+      <SwiperSlide><Card6 /></SwiperSlide>
+      <SwiperSlide><Card6 /></SwiperSlide>
+      <SwiperSlide><Card6 /></SwiperSlide>
+     
+      ...
+    </Swiper>
+          </Row>
+          {/* <div className="row row-cols-1 row-cols-md-3 g-4 px-5 ">
             <Card6 />
             <Card6 />
             <Card6 />
             <Card6 />
             <Card6 />
             <Card6 />
-          </div>
+          </div> */}
         </section>
         {/* Team / Contact Section */}
         <section
@@ -396,22 +434,58 @@ function Home() {
             </div>
           </div>
         </section>
+         <section
+          className="py-4 trandingJob"
+          id="jobs"
+          style={{
+            backgroundImage: `linear-gradient(135deg, rgb(158, 202, 225,0.6)), url(${jobvidio})`,
+          }}
+        >
+          <h2
+            className="fw-bold fs-1  mb-4 text-center"
+            style={{ color: "#072258" }}
+          >
+            Testimonials
+          </h2>
+          <Row className="px-5 mx-2">
+             <Swiper
+      spaceBetween={15}
+      slidesPerView={4}
+      onSlideChange={() => console.log('slide change')}
+      onSwiper={(swiper) => console.log(swiper)}
+    >
+      <SwiperSlide><TestimonialCard src={profilelogo}/></SwiperSlide>
+      <SwiperSlide><TestimonialCard src={profilelogo}/></SwiperSlide>
+      <SwiperSlide><TestimonialCard src={profilelogo}/></SwiperSlide>
+      <SwiperSlide><TestimonialCard src={profilelogo}/></SwiperSlide>
+      <SwiperSlide><TestimonialCard src={profilelogo}/></SwiperSlide> 
+    </Swiper>
+          </Row>
+          {/* <div className="row row-cols-1 row-cols-md-3 g-4 px-5 ">
+            <Card6 />
+            <Card6 />
+            <Card6 />
+            <Card6 />
+            <Card6 />
+            <Card6 />
+          </div> */}
+        </section>
         {/* FAQ Section */}
         <section className="py-5 px-5" style={{ backgroundColor: " #f4f4f4" }}>
           <Row className="d-flex justify-content-center">
             <Col sm={10}>
-              <h3
+              <h2
                 className="fw-bold mb-4 text-center"
                 style={{ color: "#072258" }}
               >
                 Frequently Asked Questions
-              </h3>
+              </h2>
               <div
                 className="accordion custom-accordion mt-4 pt-2"
                 id="accordionFlushExample"
               >
                 {/* Q1 */}
-                <div className="accordion-item">
+                <div className="accordion-item rounded-5">
                   <h2 className="accordion-header">
                     <button
                       className="accordion-button collapsed m-0"
@@ -549,7 +623,7 @@ function Home() {
                 </div>
 
                 {/* Q7 */}
-                <div className="accordion-item">
+                <div className="accordion-item rounded-5">
                   <h2 className="accordion-header">
                     <button
                       className="accordion-button collapsed"
@@ -578,11 +652,57 @@ function Home() {
         {/* Testimonials Section */}
 
         {/* Footer */}
-        <footer className="py-4 footer text-white text-center">
+        <footer style={{ backgroundColor: "#072258", color: "#fff", padding: "40px 0" }}>
+      <Container>
+        <Row className="align-items-center">
+          {/* Left Section */}
+          <Col md={6} className="mb-4">
+            <div className="mb-3">
+              <img src={logo} alt="CareerSetu Logo" width="180" />
+            </div>
+            <p className="fw-semibold">Follow us on social media</p>
+            <div className="d-flex gap-3">
+              <a href="https://facebook.com/careersetu" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <FaFacebook className="text-white hover-btn"/>
+              </a>
+              <a href="https://linkedin.com/company/careersetu" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <FaLinkedin className=" text-white hover-btn"/>
+              </a>
+              <a href="https://twitter.com/careersetu" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+              <FaTwitter  className="text-white hover-btn"/>
+          
+              </a>
+              <a href="https://instagram.com/careersetu" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <FontAwesomeIcon icon={FaInstagram}  className=" text-white hover-btn"/>
+              </a>
+              <a href="https://youtube.com/careersetu" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+              <FaYoutube  className="text-white hover-btn" />
+              </a>
+            </div>
+          </Col>
+
+          {/* Right Section */}
+          <Col md={6} className="text-md-end mb-4">
+            <p className="fw-bold mb-1">Apply on the go</p>
+            <p className="small">Get real-time job updates on our WebApp</p>
+          </Col>
+        </Row>
+
+        <hr className="border-light my-4" />
+
+        {/* Bottom Section */}
+        <div className="text-center small">
+          © 2026 CareerSetu Team | All rights reserved
+          <a href="/privacy" className="text-white ms-3 hover-btn">Privacy Policy</a>
+          <a href="/terms" className="text-white ms-3 hover-btn">Terms & Conditions</a>
+        </div>
+      </Container>
+    </footer>
+        {/* <footer className="py-4 footer text-white text-center">
           <p className="mb-0 text-center">
             © 2026 CareerSetu — Connecting Talent to Opportunities
           </p>
-        </footer>
+        </footer> */}
       </div>
     </>
   );

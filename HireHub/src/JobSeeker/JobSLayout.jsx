@@ -11,7 +11,7 @@ import {
   faSearch,
 } from "@fortawesome/free-solid-svg-icons";
 import { faMessage } from "@fortawesome/free-regular-svg-icons";
-import logo from "../assets/Cologo.png";
+import logo from "../assets/logo5remove.png";
 
 function JobSLayout() {
   return (
@@ -60,7 +60,7 @@ function JobSLayout() {
                 </Link>
               </li>
               <li className="mb-2">
-                <Link className="text-decoration-none link">
+                <Link className="text-decoration-none link" to={"searchJob"}>
                   <FontAwesomeIcon icon={faSearch} /> Search Jobs
                 </Link>
               </li>

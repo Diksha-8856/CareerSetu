@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 const userProfileRoute = require('./Routers/userProfileRoute');
 const userRouter = require('./Routers/login');
 const enquiryRoute = require('./Routers/enquiry');
+const jobRouter = require('./Routers/jobRouter');
+const applyJobRouter = require('./Routers/applyJobRoute');
 const port = 8002
 const app = express();
 
@@ -13,5 +15,7 @@ app.use(cors())
  app.use('/api/enquiry',enquiryRoute)
  app.use('/api/login',userRouter)
  app.use('/api/userprofile',userProfileRoute)
+ app.use('/api/employerpostJob',jobRouter)
+ app.use('/api/applyJob',applyJobRouter)
 
 app.listen(port,()=>console.log("Server is running on "+port))

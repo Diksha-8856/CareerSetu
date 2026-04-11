@@ -1,13 +1,7 @@
 p{
   text-align: justify !important;
 }
-li a:hover {
-  color: #0d6efd;
-}
-.active {
-  color: #0d6efd !important;
-  font-weight: bold;
-}
+
 .profile-img {
   width: 100px;
   height: 100px;
@@ -279,7 +273,7 @@ input:hover,textarea:hover{
 /* ==========================home page====================================== */
 :root {
   --primary: #072258;
-  --secondary: #8494FF;
+  --secondary: #002e8a;
   --soft: #C9BEFF;
   --accent: #FFDBFD;
 
@@ -488,19 +482,32 @@ body {
   transform: translateY(-5px);
 }
 .navlink .navlinka{
+  padding: 0px;
   color:  #ffffff !important;
   font-weight: 700 !important;
   font-size: 1.17rem;
+}
+.navlink .navlinka:hover{
+  padding: 0px;
+  color:  #ffffff !important;
+  border-bottom: 2px solid #072258;
 }
 
 /* default state already tumhara hoga */
 
 .loginbtn {
   background-color: #072258 !important;
-  color: #ffffff !important;
+    transition: all 0.4s ease;
+}
+.loginbtn:hover {
+  background-color: white !important;
 }
 .loginbtn a{
   color: #ffffff !important;
+  transition: all 0.4s ease;
+}
+.loginbtn:hover > a{
+  color: #072258 !important;
 }
 .login-scrolled {
   background-color: white !important;
@@ -514,11 +521,14 @@ body {
 
 .regisbtn {
   color: #072258 !important;
-  box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+}
+.regisbtn:hover {
+  color: #072258 !important;
 }
 .register-scrolled {
-  border: 1px solid 20px !important;
+border: 1px solid white !important;
     color: white !important;
+    
 }
 
 /* hover effect (optional) */
@@ -526,6 +536,8 @@ body {
 .register-scrolled:hover {
   transform: scale(1.05);
   transition: 0.3s;
+  border: 1px solid white !important;
+    color: white !important;
 }
 /* .loginbtn a{
   color: white;
@@ -535,10 +547,14 @@ body {
   border: 2px solid #13357b !important;
   color: white !important;
 }
+.regisbtn:hover{
+  border: 2px solid white !important;
+  color: white !important;
+}
 .lead{
   color: white !important;
   font-weight: 500 !important;
-  font-size: 1.5rem !important;
+  font-size: 1.27rem !important;
 
 }
 .job-card {
@@ -649,7 +665,7 @@ body {
 }
 .accordion-button{
  border: 1px solid #072258 !important;
- margin-bottom: 5px;
+ /* margin-bottom: 5px; */
   box-shadow: none !important;
  border-radius: 12px !important; 
  font-weight: 500 !important;
@@ -662,6 +678,8 @@ body {
 }
 .accordion-item{
   margin-bottom: 5px !important;
+  border-radius: 20px 20px 20px 20px;
+
 }
 
 /* Jab closed ho */
@@ -672,6 +690,7 @@ body {
 }
 .accordion-collapse{
   border: 1px solid #072258;
+  background-color: white;
 }
 .accordion-body{
   color: #072258 !important;
@@ -759,4 +778,13 @@ body {
 .applipara{
   font-size: 1.1rem;
   font-weight: 450;
+}
+.companyBackground{
+  background-color: #9ec9e157;
+}
+.fulltime{
+  background-color: rgb(0, 46, 138,0.5);
+  color: white;
+  font-weight: 500;
+  font-size: 0.9rem;
 }

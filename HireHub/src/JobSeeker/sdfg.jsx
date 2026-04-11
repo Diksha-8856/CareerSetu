@@ -1,53 +1,138 @@
-import React from "react";
-import { Row, Col, Button, Badge } from "react-bootstrap";
+import React, { useState } from "react";
 
 function Sdfg() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [resume, setResume] = useState(null);
+  const [coverLetter, setCoverLetter] = useState("");
+  const [experience, setExperience] = useState("");
+  const [skills, setSkills] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const formData = {
+      name,
+      email,
+      phone,
+      experience,
+      skills,
+      coverLetter,
+      resume,
+    };
+
+    console.log(formData);
+    alert("Application Submitted Successfully 🚀");
+  };
+
   return (
-    <div className="bg-white shadow-sm rounded-3 p-3 mb-3">
-      <Row className="align-items-center">
-        
-        {/* Logo */}
-        <Col sm={2} className="text-center">
-          <img
-            src="https://logo.clearbit.com/tcs.com"
-            alt="company logo"
-            style={{ width: "60px", height: "60px", objectFit: "contain" }}
-          />
-        </Col>
+    <form
+      onSubmit={handleSubmit}
+      className="p-4 shadow-sm mt-4"
+      style={{
+        maxWidth: "600px",
+        margin: "auto",
+        borderRadius: "15px",
+        backgroundColor: "#f9f9f9",
+      }}
+    >
+      <h4 className="mb-3 fw-bold text-center" style={{ color: "#13357b" }}>
+        Apply for Job
+      </h4>
 
-        {/* Details */}
-        <Col sm={5}>
-          <h5 className="mb-1 fw-semibold">Software Engineer</h5>
-          <p className="mb-1 text-muted">Bangalore</p>
-          <small className="text-muted">Applied on: 10 Jan 2024</small>
-        </Col>
+      {/* Name */}
+      <div className="mb-3">
+        <label className="fw-semibold">Full Name</label>
+        <input
+          type="text"
+          className="form-control mt-1 rounded-pill"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+        />
+      </div>
 
-        {/* Buttons */}
-        <Col sm={3} className="d-flex gap-2 justify-content-end">
-          <Button variant="outline-primary" size="sm">
-            View Details
-          </Button>
-          <Button variant="outline-primary" size="sm">
-            View Application
-          </Button>
-          <Button variant="outline-primary" size="sm">
-            Withdraw
-          </Button>
-        </Col>
+      {/* Email */}
+      <div className="mb-3">
+        <label className="fw-semibold">Email</label>
+        <input
+          type="email"
+          className="form-control mt-1 rounded-pill"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+      </div>
 
-        {/* Status */}
-        <Col sm={2} className="text-end">
-          <Badge
-            bg="warning"
-            text="dark"
-            className="px-3 py-2 rounded-pill"
-          >
-            Under Review
-          </Badge>
-        </Col>
+      {/* Phone */}
+      <div className="mb-3">
+        <label className="fw-semibold">Phone</label>
+        <input
+          type="tel"
+          className="form-control mt-1 rounded-pill"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+          required
+        />
+      </div>
 
-      </Row>
-    </div>
+      {/* Experience */}
+      <div className="mb-3">
+        <label className="fw-semibold">Experience (Years)</label>
+        <input
+          type="number"
+          className="form-control mt-1 rounded-pill"
+          value={experience}
+          onChange={(e) => setExperience(e.target.value)}
+        />
+      </div>
+
+      {/* Skills */}
+      <div className="mb-3">
+        <label className="fw-semibold">Skills</label>
+        <input
+          type="text"
+          className="form-control mt-1 rounded-pill"
+          placeholder="React, Node, Python..."
+          value={skills}
+          onChange={(e) => setSkills(e.target.value)}
+        />
+      </div>
+
+      {/* Resume Upload */}
+      <div className="mb-3">
+        <label className="fw-semibold">Upload Resume</label>
+        <input
+          type="file"
+          className="form-control mt-1"
+          onChange={(e) => setResume(e.target.files[0])}
+        />
+      </div>
+
+      {/* Cover Letter */}
+      <div className="mb-3">
+        <label className="fw-semibold">Cover Letter</label>
+        <textarea
+          className="form-control mt-1"
+          rows="3"
+          placeholder="Why should we hire you?"
+          value={coverLetter}
+          onChange={(e) => setCoverLetter(e.target.value)}
+        ></textarea>
+      </div>
+
+      {/* Submit */}
+      <div className="text-end">
+        <button
+          type="submit"
+          className="btn text-light px-4 rounded-pill"
+          style={{ backgroundColor: "#13357b" }}
+        >
+          Apply Now 🚀
+        </button>
+      </div>
+    </form>
   );
 }
 
