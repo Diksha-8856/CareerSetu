@@ -1,126 +1,197 @@
-import React from 'react'
-import { Card, Col, Row, Button } from 'react-bootstrap'
+import React, { useState } from 'react'
+import { Col, Row, Table, Button } from 'react-bootstrap'
 import adminPro from '../assets/me4.jpg'
+import { AllCommunityModule, ModuleRegistry } from 'ag-charts-community';
+import { AgCharts } from 'ag-charts-react';
+
+ModuleRegistry.registerModules([AllCommunityModule]);
 
 function AdDash() {
+
+  // ✅ Pie Chart Data Function
+  const getData = () => {
+    return [
+      { asset: "Stocks", amount: 60000 },
+      { asset: "Bonds", amount: 30000 },
+      { asset: "Real Estate", amount: 20000 },
+      { asset: "Cash", amount: 10000 },
+    ];
+  };
+
+  // ✅ Bar Chart
+  const [chartOptions] = useState({
+    data: [
+      { month: 'Jan', iceCreamSales: 162000 },
+      { month: 'Mar', iceCreamSales: 302000 },
+      { month: 'May', iceCreamSales: 800000 },
+      { month: 'Jul', iceCreamSales: 1254000 },
+      { month: 'Sep', iceCreamSales: 950000 },
+      { month: 'Nov', iceCreamSales: 200000 },
+    ],
+    series: [{ type: 'bar', xKey: 'month', yKey: 'iceCreamSales' }],
+  });
+
+  // ✅ Pie Chart
+  const [options] = useState({
+    data: getData(),
+    title: {
+      text: "Portfolio Composition",
+    },
+    series: [
+      {
+        type: "pie",
+        angleKey: "amount",
+        calloutLabelKey: "asset",
+        sectorLabelKey: "amount",
+        sectorLabel: {
+          color: "white",
+          fontWeight: "bold",
+          formatter: ({ value }) => `$${(value / 1000).toFixed(0)}K`,
+        },
+      },
+    ],
+  });
+
+  // ✅ Jobs Data
+  const jobs = [
+    {
+      title: "Frontend Developer",
+      company: "Google",
+      location: "Bangalore",
+      applications: 120,
+      date: "10 Apr 2026",
+      status: "Active"
+    },
+    {
+      title: "Backend Developer",
+      company: "Amazon",
+      location: "Hyderabad",
+      applications: 95,
+      date: "08 Apr 2026",
+      status: "Closed"
+    },
+  ];
+
   return (
     <>
-   <Row className='align-items-center px-3 py-2 bg-light shadow-sm'>
+      {/* HEADER */}
+      <Row className='align-items-center px-3 py-2 bg-light shadow-sm'>
+        <Col sm={2}>
+          <button className="btn btn-light btn-sm shadow">☰</button>
+        </Col>
 
-  {/* LEFT - MENU */}
-  <Col sm={2} className='d-flex align-items-center'>
-    <button className="btn btn-light btn-sm shadow">
-      ☰
-    </button>
-  </Col>
-
-  {/* CENTER - SEARCH */}
-  <Col sm={6}>
-    <div className='d-flex align-items-center bg-white px-3 py-1 rounded'>
-      <i className="fa-solid fa-magnifying-glass me-2"></i>
-      <input 
-        type="text" 
-        className="form-control border-0 shadow-none"
-        placeholder="Search..."
-      />
-    </div>
-  </Col>
-
-  {/* RIGHT - ICONS + PROFILE */}
-  <Col sm={4}>
-    <div className='d-flex align-items-center justify-content-end gap-3'>
-      
-      {/* Bell */}
-      <div className='position-relative'>
-        <i className="fa-solid fa-bell fs-5"></i>
-        
-      </div>
-
-      {/* Profile */}
-      <div className='d-flex align-items-center gap-2'>
-        <img 
-          src={adminPro} 
-          alt="" 
-          className='rounded-circle'
-          height='50'
-          width='50'
-        />
-        <div>
-          <div className='fw-bold'>shagun</div>
-          <small className='text-muted'>Admin</small>
-        </div>
-      </div>
-
-    </div>
-  </Col>
-
-</Row>
-
- <Row className="align-items-center mt-3">
-          
-          {/* LEFT - IMAGE */}
-          <Col md={2}>
-            <img 
-              src={adminPro} 
-              alt="profile" 
-              className="img-fluid rounded"
+        <Col sm={6}>
+          <div className='d-flex bg-white px-3 py-1 rounded'>
+            <input 
+              type="text" 
+              className="form-control border-0 shadow-none"
+              placeholder="Search..."
             />
-          </Col>
+          </div>
+        </Col>
 
-          {/* CENTER - DETAILS */}
-          <Col md={7}>
-            <div className="d-flex align-items-center gap-2">
-              <h3 className="mb-0">Shagun</h3>
-              <i className="fa-solid fa-circle-check" style={{color:"#13357b"}}></i>
+        <Col sm={4} className='d-flex justify-content-end align-items-center gap-3'>
+          <i className="fa-solid fa-bell"></i>
+
+          <div className='d-flex align-items-center gap-2'>
+            <img src={adminPro} alt="" className='rounded-circle' height='40' width='40'/>
+            <div>
+              <div className='fw-bold'>shagun</div>
+              <small className='text-muted'>Admin</small>
             </div>
+          </div>
+        </Col>
+      </Row>
 
-            <p className="mt-2 text-muted">Mern Full Stack Developer</p>
-
-            <div className="d-flex flex-column gap-3 mt-1 text-muted">
-              <span>
-                <i className="fa-solid fa-location-dot me-2 mt-3"></i>
-                Softpro India Computer Technologies Pvt. Ltd., Noida
-              </span>
-
-              <span>
-                <i className="fa-solid fa-phone me-2"></i>
-                7830667712
-              </ span> 
-
-              <span>
-                <i className="fa-solid fa-envelope me-2 "></i>
-                shagunpaharwa1981@gmail.com
-              </span>
-            </div>
-
-            <div className="d-flex flex-column me-2 text-muted">
-              <span>
-                <i className="fa-brands fa-linkedin me-2"></i>
-                https://www.linkedin.com/in/admin
-              </span>
-
-              <span>
-                <i className="fa-brands fa-github me-2"></i>
-                https://github.com/admin
-              </span>
+      {/* CARDS */}
+      <Row className="mt-4 px-3">
+        {[
+          { title: "Total Applied Job", value: "26+", color: "#eaf4fd" },
+          { title: "Total Shortlisted", value: "16+", color: "#eef8f0" },
+          { title: "Total Recruiter", value: "26+", color: "#f4f2fb" },
+          { title: "Total Job Seeker", value: "20+", color: "#fef8ea" },
+          { title: "Total Posted Job", value: "21+", color: "#fdeff4" },
+          { title: "Total Enquiries", value: "26+", color: "#eaf4fd" },
+        ].map((item, i) => (
+          <Col md={4} className="mb-3" key={i}>
+            <div className="card text-center" style={{background:item.color}}>
+              <div className="card-body">
+                <h3>{item.value}</h3>
+                <p>{item.title}</p>
+              </div>
             </div>
           </Col>
+        ))}
+      </Row>
 
-          {/* RIGHT - BUTTON */}
-          <Col md={3} className="text-center">
-            <Button className="rounded-pill px-4 shadow-lg" style={{backgroundColor:"#13357b"}}>
-              Edit Profile
-            </Button>
-          </Col>
+      {/* TABLE */}
+      <Row className="px-3">
+        <Col>
+          <div className="card p-3 shadow-sm">
+            <div className="d-flex justify-content-between mb-3">
+              <h5>Recent Jobs</h5>
+              <Button size="sm" style={{backgroundColor:"#13357b"}}>View All</Button>
+            </div>
 
-        </Row>
+            <Table responsive hover>
+              <thead>
+                <tr>
+                  <th>Job Title</th>
+                  <th>Company</th>
+                  <th>Location</th>
+                  <th>Applications</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
 
-  <Row>
-    <Col>
-    </Col>
-    </Row>      
+              <tbody>
+                {jobs.map((job, i) => (
+                  <tr key={i}>
+                    <td>{job.title}</td>
+                    <td>{job.company}</td>
+                    <td>{job.location}</td>
+                    <td>{job.applications}</td>
+                    <td>{job.date}</td>
+                    <td>
+                      <span style={{
+                        padding: "5px 10px",
+                        borderRadius: "20px",
+                        color: "#fff",
+                        backgroundColor: job.status === "Active" ? "#28a745" : "#dc3545"
+                      }}>
+                        {job.status}
+                      </span>
+                    </td>
+                    <td>
+                      <Button size="sm" className="me-2">Edit</Button>
+                      <Button size="sm" variant="danger">Delete</Button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </Table>
+          </div>
+        </Col>
+      </Row>
+
+      {/* CHARTS */}
+      <Row className="px-3">
+        <Col md={6}>
+          <div className="card mt-3 p-3">
+            <AgCharts options={chartOptions} />
+          </div>
+        </Col>
+
+        <Col md={6}>
+          <div className="card mt-3 p-3">
+            <AgCharts options={options} />
+          </div>
+        </Col>
+      </Row>
     </>
   )
 }
 
-export default AdDash
+export default AdDash;

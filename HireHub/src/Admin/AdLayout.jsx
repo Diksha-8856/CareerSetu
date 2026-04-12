@@ -9,7 +9,7 @@ function AdLayout() {
     { name: "Dashboard", path: "/admin/dashboard" ,icon: "fa-solid fa-house-chimney",},
     { name: "Recruiter", path: "/admin/viewRecruiter", icon: "fa-solid fa-user"},
     { name: "Jobseeker", path: "/admin/viewJobseeker", icon: "fa-solid fa-users"},
-    { name: "Jobs", path: "/admin/viewJobs", icon: "fa-solid fa-building"},
+    { name: "Jobs", path: "/admin/jobs", icon: "fa-solid fa-building"},
     { name: "News", path: "/admin/postNews", icon: "fa-solid fa-newspaper"},
     { name: "Applications", path: "/admin/viewApplications",icon: "fa-solid fa-comment"},
     { name: "View Enquiry", path: "/admin/viewEnq", icon: "fa-solid fa-clipboard-list"}
@@ -46,7 +46,7 @@ function AdLayout() {
         </aside>
 
         {/* Main Content */}
-        <main className="col-10 flex-grow-1     bg-light overflowx-auto" style={{ height: "100vh" }}>
+        <main className="col-10 flex-grow-1  bg-light overflowx-auto" style={{ height: "100vh", overflow: "auto" }}>
           <Outlet />
         </main>
       </div>
