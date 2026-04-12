@@ -226,7 +226,7 @@ function Card7(p){
           <img src={p.src} alt="Jeeya" className="img-fluid" />
           <h6 className="title">{p.title}</h6>
           <span className="role">{p.role}</span>
-          <p className="m-0">{p.para}</p>
+
         </div>
       </div>
     </>

@@ -5,7 +5,7 @@ import home1 from "../assets/home5rem.png";
 import { Autoplay } from "swiper/modules";
 import profilelogo from "../assets/profile.jpeg";
 import aboutImg from "../assets/jobseekers.jpg";
-import jeeya from "../assets/jiya.jpeg";
+import jeeya from "../assets/jeeya.jpeg";
 import diksha from "../assets/diksha.jpeg";
 import megha from "../assets/megha.jpeg";
 import sagun from "../assets/shagun.jpeg";
@@ -419,28 +419,24 @@ function Home() {
             <div className="row text-center g-4">
               {/* Card 1 */}
               <Card7
+                src={diksha}
+                title="Diksha Kushawaha"
+                role="Full Stack Developer "
+              />
+              <Card7
                 src={jeeya}
                 title="Jeeya Agrawal"
                 role="Full Stack Developer"
-                para="Builds scalable web apps with modern technologies."
-              />
-              <Card7
-                src={diksha}
-                title="Diksha Kushawaha"
-                role="Backend Engineer"
-                para="Handles server-side logic and database systems."
-              />
-              <Card7
-                src={megha}
-                title="Megha Upadhyaya"
-                role="UI/UX Designer"
-                para="Designs clean and user-friendly interfaces."
               />
               <Card7
                 src={sagun}
                 title="Shagun"
                 role="Graphics Designer"
-                para="Creates creative visuals and branding ideas."
+              />
+              <Card7
+                src={megha}
+                title="Megha Upadhyaya"
+                role="UI Designer"
               />
             </div>
           </div>
