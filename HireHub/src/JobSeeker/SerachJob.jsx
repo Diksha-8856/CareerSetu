@@ -22,6 +22,7 @@ function SerachJob() {
       const [coverLetter, setCoverLetter] = useState("");
       const [experience, setExperience] = useState("");
       const [skills, setSkills] = useState("");
+      const [status, setStatus] = useState("Not Applied")
   const [userData, setUserData] = useState([]);
   const nevigate = useNavigate();
 
@@ -57,10 +58,12 @@ function SerachJob() {
       skills,
       coverLetter,
       resume,
+      status
     };
     const response = await axios.post(`http://localhost:8002/api/applyJob`, formData);
     console.log(response);
     alert("Application Submitted Successfully 🚀");
+    alert(setStatus("Applied"));
   };
 
   useEffect(() => {
@@ -69,9 +72,16 @@ function SerachJob() {
   }, []);
   return (
     <>
-      <Col sm={10}>
+      <Col sm={10}  style={{
+         overflow: "auto",
+  height: "100vh",
+  backgroundColor: ` #ededed`,
+  backgroundRepeat: "no-repeat",
+  backgroundSize: "cover",
+  backgroundPosition: "center"
+      }}>
         <Row>
-          <Col sm={12}>
+          <Col sm={12} >
             <Row className="">
               <Col sm={9} className="pt-3 d-flex">
                 <div className="pt-2 ps-2">
@@ -90,7 +100,7 @@ function SerachJob() {
                   />
                 </div>
               </Col>
-              <Col sm={3} className="pt-4 bg-white pe-5">
+              <Col sm={3} className="pt-4 pe-5">
                 <div className="d-flex justify-content-end gap-2">
                   <span className="pt-1">
                     <Link>
@@ -156,7 +166,7 @@ function SerachJob() {
         </Row>
         <Row>
           <Col sm={12}>
-            <div className="row">
+            <div className="row row-cols-1 row-cols-md-3 px-3 py-3 ">
               {userData.map((u, i) => (
                 <JobCard 
                 key={i}
@@ -167,6 +177,7 @@ function SerachJob() {
                   desc={u.jobDesc}
                   type={u.department}
                   FullTime={u.jobType}
+                  viewJob="/jobseeker/jobDetails"
                   OnSite={u.workMode}
                   modal={"modal"}
                   exampleModal={"#exampleModal"}

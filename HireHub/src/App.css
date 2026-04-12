@@ -788,3 +788,181 @@ border: 1px solid white !important;
   font-weight: 500;
   font-size: 0.9rem;
 }
+
+/* ==================================Shagun CSS ================================= */
+.formStyle{
+  border-radius: 20px 0px 0px 20px;
+}
+
+.imageStyle{
+  border-radius: 0px 20px 20px 0px;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border-radius: 15px;
+  transition: 0.3s;
+  color: var(--text);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.job-card {
+  width: 90%;
+  max-width: 750px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 15px;
+  background: #f8fbff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #dbeafe;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Header */
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.job-title {
+  color: #2563eb;
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.company-name {
+  color: gray;
+  font-size: 14px;
+}
+
+.status {
+  background: #dcfce7;
+  color: green;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+/* Info Grid */
+.job-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.info-item {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.icon {
+  background: #e0ecff;
+  padding: 10px;
+  border-radius: 10px;
+  color: #2563eb;
+  min-width: 40px;
+  text-align: center;
+}
+
+.label {
+  color: #2563eb;
+  font-weight: 600;
+  margin: 0;
+  font-size: 14px;
+}
+
+.value {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Description */
+.job-description {
+  margin-top: 20px;
+}
+
+.desc-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.desc-text {
+  margin-top: 10px;
+  color: #555;
+  font-size: 14px;
+}
+
+/* Buttons */
+.job-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.edit-btn {
+  border: 1px solid #2563eb;
+  color: #2563eb;
+  background: white;
+}
+
+.delete-btn {
+  border: 1px solid red;
+  color: red;
+  background: white;
+}
+
+/* 🔥 RESPONSIVE BREAKPOINTS */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .job-info {
+    grid-template-columns: 1fr;
+  }
+
+  .job-title {
+    font-size: 20px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .job-card {
+    padding: 15px;
+  }
+
+  .card-body {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .status {
+    align-self: flex-end;
+  }
+
+  .job-actions {
+    justify-content: center;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}

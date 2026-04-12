@@ -6,11 +6,18 @@ const userProfileSchema = mongoose.Schema({
     },
     role:{
         type:String,
-        required:true
     },
     about:{
         type:String,
-        required:true
+    },
+    password:{
+        type:String,
+    },
+    gender:{
+        type:String,
+    },
+    dob:{
+        type:String,
     },
      location:{
         type:String,
@@ -27,11 +34,10 @@ const userProfileSchema = mongoose.Schema({
     },
      linkedin:{
         type:String,
-        required:true
+
     },
      gitHub:{
         type:String,
-        required:true
     },
      skill:{
         type:String,
@@ -54,11 +60,9 @@ const userProfileSchema = mongoose.Schema({
     },
      projectTitle:{
         type:String,
-        required:true
     },
      projectDesc:{
         type:String,
-        required:true
     },
 },{timestamps:true});
 

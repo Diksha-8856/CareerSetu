@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import google from '../assets/amazon.png'
 import { Col, Row } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 
 function Card(p) {
@@ -166,10 +167,10 @@ function Card5(p){
     <div className="col">
       <div className="card custom-card h-100 border-0 bg-white rounded-4 ">
         <div className="card-body">
-          <h2 className=" fw-bold" style={{color:"#13357b"}}>1,500+</h2>
-          <h5 className="fw-semibold">Jobs Posted</h5>
+          <h2 className=" fw-bold" style={{color:"#13357b"}}>{p.num}</h2>
+          <h5 className="fw-semibold">{p.type}</h5>
           <p className="text-muted text-center fw-semibold">
-            Explore thousands of job opportunities.
+           {p.desc}
           </p>
         </div>
       </div>
@@ -210,7 +211,7 @@ function Card6(p){
       </div>
 
       {/* Button */}
-      <button className="btn apply-btn w-100 mainbtn">Apply Now</button>
+      <button className="btn apply-btn w-100 mainbtn" onClick={p.gotoLogin}>Apply Now</button>
     </div>
   </div>
 </div>
@@ -255,20 +256,17 @@ function TestimonialCard(p) {
           "This platform helped me land my dream job quickly. Super easy to use and very effective!"
         </p>
       </div>
-
-      {/* Rating */}
-      <div className="text-end pe-4 mb-2">
-        ⭐⭐⭐⭐⭐
-      </div>
     </div>
   );
 }
-
+  
 function JobCard(p) {
+
+const navigate = useNavigate();
   return (
     <div className="col-md-4 mb-3" key={p.key}>
   <div
-  className="card border-0 shadow-sm h-100 p-2"
+  className="card border-0 shadow-sm h-100 p-2 bg-white"
   style={{
     borderRadius: "18px",
     transition: "0.3s",
@@ -332,7 +330,8 @@ function JobCard(p) {
     {/* Bottom Buttons */}
     <div className="d-flex justify-content-between align-items-center mt-4 pt-2 px-2 pb-2">
 
-      <button className="btn btn-outline-primary btn-sm rounded-pill px-3 me-3">
+      <button className="btn btn-outline-primary btn-sm rounded-pill px-3 me-3"   onClick={() => navigate(p.viewJob)} 
+>
         View Details
       </button>
 <button type="button" className="btn  btn-sm rounded-pill px-3 mainbtn" data-bs-toggle={p.modal} data-bs-target={p.exampleModal}>
@@ -345,6 +344,102 @@ function JobCard(p) {
     </div>
   );
 }
+function AppliedJobCard(p) {
+ return(
+  <>
+   <div className="col">
+ <div
+  className="card border-0 shadow-sm p-3 job-card"
+  style={{
+    borderRadius: "18px",
+    background: "linear-gradient(145deg, #ffffff, #f3f6fb)"
+  }}
+>
+  <div className="card-body p-2">
+
+    {/* Top Section */}
+    <div className="d-flex justify-content-between align-items-start">
+
+      {/* Left: Logo + Title */}
+      <div className="d-flex align-items-center gap-3">
+
+        {/* Company Logo */}
+        <div
+          style={{
+            padding: "6px",
+            borderRadius: "12px",
+            backgroundColor: "#fff",
+            boxShadow: "0 2px 8px rgba(0,0,0,0.08)"
+          }}
+        >
+          <img
+            src={google}
+            alt="company"
+            style={{
+              width: "40px",
+              height: "40px",
+              objectFit: "contain"
+            }}
+          />
+        </div>
+
+        {/* Job Info */}
+        <div>
+          <h5 className="fw-bold mb-0" style={{ fontSize: "1.1rem" }}>
+           {p.jobType}
+          </h5>
+          <p className="text-muted m-0" style={{ fontSize: "14px" }}>
+            {p.company}
+          </p>
+        </div>
+      </div>
+
+      {/* Status */}
+      <span
+        className="badge px-3 py-2"
+        style={{
+          backgroundColor: "#fff3cd",
+          color: "#856404",
+          borderRadius: "20px",
+          fontSize: "12px"
+        }}
+      >
+        {p.status}
+      </span>
+    </div>
+
+    {/* Details */}
+    <div className="mt-3 d-flex flex-wrap gap-3 text-muted" style={{ fontSize: "14px" }}>
+      <span>📍 {p.location}</span>
+      <span>💰 {p.salary} LPA</span>
+      <span>📅 {p.date}</span>
+    </div>
+
+    {/* Description */}
+    <p className="text-muted mt-3 mb-2" style={{ fontSize: "14px" }}>
+     {p.desc}
+    </p>
+
+    {/* Button */}
+    <div className="text-end">
+      <button
+        className="btn rounded-pill px-4 py-1"
+        style={{
+          border: "1px solid #13357b",
+          color: "#13357b",
+          backgroundColor: "transparent"
+        }}
+      >
+        View Job →
+      </button>
+    </div>
+
+  </div>
+</div>
+  </div>
+  </>
+ )
+}
 
 export default Card;
-export { Card2, Card3 ,Card4,Card5,Card6,Card7,TestimonialCard ,JobCard};
+export { Card2, Card3 ,Card4,Card5,Card6,Card7,TestimonialCard ,JobCard,AppliedJobCard};

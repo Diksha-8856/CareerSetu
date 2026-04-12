@@ -48,9 +48,9 @@ function JobSLayout() {
                   <FontAwesomeIcon icon={faHome} /> Dashboard
                 </Link>
               </li>
-              <li className="mb-2">
-                <Link className="text-decoration-none link" to={"userapplication"}>
-                  <FontAwesomeIcon icon={faFileLines} /> My Apllication
+               <li className="mb-2">
+                <Link className="text-decoration-none link" to={"application"}>
+                  <FontAwesomeIcon icon={faBriefcase} /> My Applications
                 </Link>
               </li>
               <li className="mb-2">
@@ -62,21 +62,6 @@ function JobSLayout() {
               <li className="mb-2">
                 <Link className="text-decoration-none link" to={"searchJob"}>
                   <FontAwesomeIcon icon={faSearch} /> Search Jobs
-                </Link>
-              </li>
-              <li className="mb-2">
-                <Link className="text-decoration-none link">
-                  <FontAwesomeIcon icon={faBriefcase} /> Applied Jobs
-                </Link>
-              </li>
-              <li className="mb-2">
-                <Link className="text-decoration-none link">
-                  <FontAwesomeIcon icon={faSave} /> Saved Jobs
-                </Link>
-              </li>
-              <li className="mb-2">
-                <Link className="text-decoration-none link">
-                  <FontAwesomeIcon icon={faMessage} /> Messages
                 </Link>
               </li>
             </ul>

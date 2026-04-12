@@ -2,22 +2,37 @@ import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import logo from "../assets/logo5remove.png";
 import home1 from "../assets/home5rem.png";
+import { Autoplay } from "swiper/modules";
 import profilelogo from "../assets/profile.jpeg";
 import aboutImg from "../assets/jobseekers.jpg";
-import jeeya from "../assets/jeeya.jpeg";
+import jeeya from "../assets/jiya.jpeg";
 import diksha from "../assets/diksha.jpeg";
 import megha from "../assets/megha.jpeg";
 import sagun from "../assets/shagun.jpeg";
 import jobvidio from "../assets/jvideo.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Col, Container, Row } from "react-bootstrap";
 import { Card5, Card6, Card7, TestimonialCard } from "../Components/Card";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaYoutube } from "react-icons/fa";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { toast } from "react-toastify";
 
 function Home() {
   const [darkMode, setDarkMode] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const navigate = useNavigate();
+
+  function GotoLogin (){
+    toast.warning("Please Login First")
+      navigate("/login")
+  }
+ function HomeJobs (){
+      navigate("/homeJobs")
+  }
+ function RegisterPage (){
+      navigate("/register")
+  }
+
 
   // Theme Apply
   useEffect(() => {
@@ -65,7 +80,7 @@ function Home() {
                 <Col sm={8} className="">
                   <h1 className="fw-bold display-5 hero-title text-start ps-5 mt-5 mb-2">
                     Find Your Dream Job with <br />
-                    <span style={{ color: "var(--primary)" }}>Career</span>
+                    <span style={{ color: "#9ecae1" }} >Career</span>
                     <span style={{ color: "var(--soft)" }}>Setu</span>
                   </h1>
                   <p className="lead  hero-subtitle ps-5 w-75" >
@@ -73,13 +88,13 @@ function Home() {
                   </p>
                   <Row className=" pt-3 ps-3">
                     <Col sm={4} className="p-0 ps-5 ">
-                     <button className="btn btn-primary-custom form-control rounded-3 fw-semibold fs-5 py-2 text-white">
+                     <button className="btn btn-primary-custom form-control rounded-3 fw-semibold fs-5 py-2 text-white" onClick={GotoLogin}>
                       Get Jobs
                       </button>
                     </Col>
 
                     <Col sm={4} className="p-0 px-2 pe-4">
-                      <button className="btn btn-primary-custom  form-control rounded-3 fw-semibold fs-5  py-2 text-white">
+                      <button className="btn btn-primary-custom  form-control rounded-3 fw-semibold fs-5  py-2 text-white" onClick={GotoLogin}>
                       Post Jobs
                       </button>
                     </Col>
@@ -96,9 +111,9 @@ function Home() {
                           </div>
                           <div className="py-3 rounded-3 mx-3 companyBackground">
                             <img
-                              src="src/assets/ms.jpg"
+                              src="src/assets/microrem.png"
                               alt="Microsoft"
-                              className="company-logo mx-4"
+                              className="company-logo mx-2"
                             />
                           </div>
                           <div className="companyBackground py-3 rounded-3">
@@ -219,13 +234,13 @@ function Home() {
                         </a>
                       </li>
                       <li className="nav-item">
-                        <a className="nav-link  navlinka mx-4" href="#hero">
-                          Companies
+                        <a className="nav-link  navlinka mx-4" href="#testimonials">
+                          Testimonials
                         </a>
                       </li>
                       <li className="nav-item">
-                        <a className="nav-link navlinka " href="#">
-                          Contact
+                        <a className="nav-link navlinka " href="#faq">
+                          FAQ
                         </a>
                       </li>
                     </ul>
@@ -246,13 +261,11 @@ function Home() {
                       Login
                     </Link>
                   </button>
-                  <button
-                    className={`btn px-4 fw-bold regisbtn rounded-pill ${
-                      scrolled ? "register-scrolled" : ""
-                    }`}
-                  >
-                    Register
-                  </button>
+                  <Link to="/register" className="text-decoration-none">
+                    <button className="btn px-4 fw-bold regisbtn rounded-pill">
+                      Register
+                    </button>
+                  </Link>
                 </div>
 
                 {/* <div className="nav-actions d-flex align-items-center ms-3">
@@ -285,10 +298,10 @@ function Home() {
           style={{ backgroundColor: "#f4f4f4" }}
         >
           {/* Card 1 */}
-          <Card5 />
-          <Card5 />
-          <Card5 />
-          <Card5 />
+          <Card5 type="Posted Jobs" num='1,500+'/>
+          <Card5  type="Total Recruiter" num='1,500+'  />
+          <Card5  type="Total Jobseeker" num='1,500+'/>
+          <Card5  type="Total Hired Applicants" num='1,500+'/>
         </div>
 
         {/* About Section */}
@@ -343,7 +356,7 @@ function Home() {
                 </li>
               </ul>
               {/* Button */}
-              <button className="btn about-btn mt-3   rounded-3">
+              <button className="btn about-btn mt-3   rounded-3" onClick={HomeJobs}>
                 Explore Jobs →
               </button>
             </div>
@@ -365,23 +378,21 @@ function Home() {
           </h2>
           <Row className="px-5 mx-2">
              <Swiper
-      spaceBetween={15}
-      slidesPerView={4}
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper) => console.log(swiper)}
-    >
-      <SwiperSlide><Card6 /></SwiperSlide>
-      <SwiperSlide><Card6 /></SwiperSlide>
-      <SwiperSlide><Card6 /></SwiperSlide>
-      <SwiperSlide><Card6 /></SwiperSlide>
-      <SwiperSlide><Card6 /></SwiperSlide>
-      <SwiperSlide><Card6 /></SwiperSlide>
-      <SwiperSlide><Card6 /></SwiperSlide>
-      <SwiperSlide><Card6 /></SwiperSlide>
-      <SwiperSlide><Card6 /></SwiperSlide>
-     
-      ...
-    </Swiper>
+  modules={[Autoplay]}
+  spaceBetween={0}
+  slidesPerView={4}
+  autoplay={{
+    delay: 1500, // 1.5 sec me slide change
+    disableOnInteraction: false, // user touch kare tab bhi autoplay chalta rahe
+  }}
+  loop={true} // infinite scroll ke liye (important 🔥)
+>
+  <SwiperSlide><Card6 gotoLogin={GotoLogin} /></SwiperSlide>
+  <SwiperSlide><Card6 gotoLogin={GotoLogin} /></SwiperSlide>
+  <SwiperSlide><Card6 gotoLogin={GotoLogin} /></SwiperSlide>
+  <SwiperSlide><Card6 gotoLogin={GotoLogin} /></SwiperSlide>
+  <SwiperSlide><Card6 gotoLogin={GotoLogin} /></SwiperSlide>
+</Swiper>
           </Row>
           {/* <div className="row row-cols-1 row-cols-md-3 g-4 px-5 ">
             <Card6 />
@@ -436,7 +447,7 @@ function Home() {
         </section>
          <section
           className="py-4 trandingJob"
-          id="jobs"
+          id="testimonials"
           style={{
             backgroundImage: `linear-gradient(135deg, rgb(158, 202, 225,0.6)), url(${jobvidio})`,
           }}
@@ -448,18 +459,22 @@ function Home() {
             Testimonials
           </h2>
           <Row className="px-5 mx-2">
-             <Swiper
-      spaceBetween={15}
-      slidesPerView={4}
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper) => console.log(swiper)}
-    >
-      <SwiperSlide><TestimonialCard src={profilelogo}/></SwiperSlide>
-      <SwiperSlide><TestimonialCard src={profilelogo}/></SwiperSlide>
-      <SwiperSlide><TestimonialCard src={profilelogo}/></SwiperSlide>
-      <SwiperSlide><TestimonialCard src={profilelogo}/></SwiperSlide>
-      <SwiperSlide><TestimonialCard src={profilelogo}/></SwiperSlide> 
-    </Swiper>
+              <Swiper
+  modules={[Autoplay]}
+  spaceBetween={15}
+  slidesPerView={4}
+  autoplay={{
+    delay: 1500, // 1.5 sec me slide change
+    disableOnInteraction: false, // user touch kare tab bhi autoplay chalta rahe
+  }}
+  loop={true} // infinite scroll ke liye (important 🔥)
+>
+  <SwiperSlide><TestimonialCard src={profilelogo} /></SwiperSlide>
+  <SwiperSlide><TestimonialCard src={profilelogo} /></SwiperSlide>
+  <SwiperSlide><TestimonialCard src={profilelogo} /></SwiperSlide>
+  <SwiperSlide><TestimonialCard src={profilelogo} /></SwiperSlide>
+  <SwiperSlide><TestimonialCard src={profilelogo} /></SwiperSlide>
+</Swiper>
           </Row>
           {/* <div className="row row-cols-1 row-cols-md-3 g-4 px-5 ">
             <Card6 />
@@ -471,7 +486,7 @@ function Home() {
           </div> */}
         </section>
         {/* FAQ Section */}
-        <section className="py-5 px-5" style={{ backgroundColor: " #f4f4f4" }}>
+        <section className="py-5 px-5" style={{ backgroundColor: " #f4f4f4" }} id="faq">
           <Row className="d-flex justify-content-center">
             <Col sm={10}>
               <h2
@@ -652,57 +667,74 @@ function Home() {
         {/* Testimonials Section */}
 
         {/* Footer */}
-        <footer style={{ backgroundColor: "#072258", color: "#fff", padding: "40px 0" }}>
-      <Container>
-        <Row className="align-items-center">
-          {/* Left Section */}
-          <Col md={6} className="mb-4">
-            <div className="mb-3">
-              <img src={logo} alt="CareerSetu Logo" width="180" />
-            </div>
-            <p className="fw-semibold">Follow us on social media</p>
-            <div className="d-flex gap-3">
-              <a href="https://facebook.com/careersetu" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-              <FaFacebook className="text-white hover-btn"/>
-              </a>
-              <a href="https://linkedin.com/company/careersetu" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <FaLinkedin className=" text-white hover-btn"/>
-              </a>
-              <a href="https://twitter.com/careersetu" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-              <FaTwitter  className="text-white hover-btn"/>
-          
-              </a>
-              <a href="https://instagram.com/careersetu" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-              <FontAwesomeIcon icon={FaInstagram}  className=" text-white hover-btn"/>
-              </a>
-              <a href="https://youtube.com/careersetu" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-              <FaYoutube  className="text-white hover-btn" />
-              </a>
-            </div>
-          </Col>
+        <footer
+  className="text-white pt-5"
+  style={{
+    background: "linear-gradient(135deg, #072258, #0a3d91)",
+  }}
+>
+  <div className="container">
+    <div className="row gy-4">
 
-          {/* Right Section */}
-          <Col md={6} className="text-md-end mb-4">
-            <p className="fw-bold mb-1">Apply on the go</p>
-            <p className="small">Get real-time job updates on our WebApp</p>
-          </Col>
-        </Row>
+      {/* Logo + About */}
+      <div className="col-md-4">
+        <img src={logo} alt="CareerSetu Logo" width="180" className="mb-3" />
+        <p className="small" style={{ opacity: 0.85 }}>
+          CareerSetu connects job seekers with top companies. 
+          Explore opportunities, hire talent, and grow your career 🚀
+        </p>
+      </div>
 
-        <hr className="border-light my-4" />
+      {/* Features */}
+      <div className="col-md-2">
+        <h6 className="fw-bold mb-3">Features</h6>
+        <ul className="list-unstyled small">
+          <li><a href="#jobs" className="footer-link text-white">Find Jobs</a></li>
+          <li><a href="#jobs" className="footer-link text-white" onClick={GotoLogin}>Post Jobs</a></li>
+          <li><a href="#about" className="footer-lin text-white">About</a></li>
+          <li><a href="#faq" className="footer-link text-white">FAQs</a></li>
+        </ul>
+      </div>
 
-        {/* Bottom Section */}
-        <div className="text-center small">
-          © 2026 CareerSetu Team | All rights reserved
-          <a href="/privacy" className="text-white ms-3 hover-btn">Privacy Policy</a>
-          <a href="/terms" className="text-white ms-3 hover-btn">Terms & Conditions</a>
+      {/* Links */}
+      <div className="col-md-3">
+        <h6 className="fw-bold mb-3">Useful Links</h6>
+        <ul className="list-unstyled small">
+          <li><a href="/login" className="footer-link text-white" onClick={GotoLogin}>Login</a></li>
+          <li><a href="/register" className="footer-link text-white" onClick={RegisterPage}>Register</a></li>
+          <li><a href="#" className="footer-link text-white">Privacy Policy</a></li>
+          <li><a href="#" className="footer-link text-white">Terms & Conditions</a></li>
+        </ul>
+      </div>
+
+      {/* Contact */}
+      <div className="col-md-3">
+        <h6 className="fw-bold mb-3">Contact</h6>
+        <p className="small mb-1">📍 India</p>
+        <p className="small mb-1">📧 careersetu@gmail.com</p>
+        <p className="small mb-1">📞 +91 9876543210</p>
+
+        {/* Social Icons */}
+        <div className="d-flex gap-3">
+          <a href="#" className="social-icon"><i className="fab text-white fa-facebook-f"></i></a>
+          <a href="#" className="social-icon"><i className="fab text-white fa-twitter"></i></a>
+          <a href="#" className="social-icon"><i className="fab text-white fa-instagram"></i></a>
+          <a href="#" className="social-icon"><i className="fab text-white fa-linkedin"></i></a>
+          <a href="#" className="social-icon"><i className="fab text-white fa-github"></i></a>
         </div>
-      </Container>
-    </footer>
-        {/* <footer className="py-4 footer text-white text-center">
-          <p className="mb-0 text-center">
-            © 2026 CareerSetu — Connecting Talent to Opportunities
-          </p>
-        </footer> */}
+      </div>
+
+    </div>
+
+    {/* Divider */}
+    <hr className="mt-4" style={{ opacity: 0.2 }} />
+
+    {/* Bottom */}
+    <div className="text-center pb-3 small" style={{ opacity: 0.8 }}>
+      © 2026 CareerSetu | All Rights Reserved
+    </div>
+  </div>
+</footer>
       </div>
     </>
   );

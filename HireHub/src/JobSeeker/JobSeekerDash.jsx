@@ -115,7 +115,7 @@ function JobSeekerDash() {
                 </button>
                 <ul className="dropdown-menu lh-sm">
                   <li className="hoverColor">
-                    <Link className="dropdown-item fw-semibold" to={"jobseekerprofile"}>
+                    <Link className="dropdown-item fw-semibold" to={"/jobseeker/jobseekerprofile"}>
                      <FontAwesomeIcon icon={faUser}/> Profile
                     </Link>
                   </li>

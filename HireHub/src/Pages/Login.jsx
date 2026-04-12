@@ -101,9 +101,6 @@ function Login() {
                           value={password}
                           onChange={(e) => setPassword(e.target.value)}
                         />
-                        <div id="emailHelp" className="form-text">
-                          Forgot Password
-                        </div>
                       </div>
 
                       <button
