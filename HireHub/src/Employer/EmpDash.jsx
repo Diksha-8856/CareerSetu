@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 import { Button, Card, Col, Row } from "react-bootstrap";
 
@@ -31,6 +32,14 @@ function EmpDash() {
       status: "Active",
     },
   ];
+
+  const getTotalCount = async()=>{
+    const response = await axios.get(`http://localhost:8002/api/TotalCount`);
+    console.log(response);
+    if(response.data.msg == "Success"){
+      
+    }
+  }
 
   const applicant = [
     {

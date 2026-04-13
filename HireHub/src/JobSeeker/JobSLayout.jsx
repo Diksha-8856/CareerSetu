@@ -64,6 +64,11 @@ function JobSLayout() {
                   <FontAwesomeIcon icon={faSearch} /> Search Jobs
                 </Link>
               </li>
+              <li className="mb-2">
+                <Link className="text-decoration-none link" to={"feedback"}>
+                  <FontAwesomeIcon icon={faSearch} /> Feedback
+                </Link>
+              </li>
             </ul>
           </div>
         </Col>

@@ -34,7 +34,7 @@ function JobSeekerDash() {
 
       const getUserData = async () => {
     const response = await axios.get(
-      `http://localhost:8002/api/userprofile/${localStorage.getItem("jobSeeker")}`,
+      `http://localhost:8002/api/userprofile/${localStorage.getItem("jobseeker")}`,
     );
     // console.log(response);
     if (response.data.msg === "Success") {
@@ -43,12 +43,12 @@ function JobSeekerDash() {
   };
   // console.log(userData)
   function logOut(){
-    localStorage.removeItem('jobSeeker');
+    localStorage.removeItem('jobseeker');
   nevigate('/login')
   }
 
   const validate = ()=>{
-    if(!localStorage.getItem('jobSeeker')){
+    if(!localStorage.getItem('jobseeker')){
       toast.error("Please Login");
       nevigate("/login")
     }

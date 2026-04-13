@@ -76,7 +76,7 @@ function EmpSidebar() {
             </div>
           </Link>
 
-          <button type="button" className="btn btn-primary mt-3">Log Out</button>
+          <Link to={"/login"}><button type="button" className="btn btn-primary mt-3">Log Out</button></Link>
           </div>
           
         </Col>

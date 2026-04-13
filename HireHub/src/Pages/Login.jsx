@@ -18,17 +18,22 @@ function Login() {
     const user = { email, password };
     console.log(user);
     const response = await axios.post("http://localhost:8002/api/login", user);
+    
     if (response.data.msg == "Success") {
-      toast.success("Login Success");
+      toast.success("Login Successfully");
       console.log(response);
       localStorage.setItem(response.data.role, response.data.id);
       setEmail("");
       setPassword("");
-      if (response.data.role === "jobSeeker") {
+      if (response.data.role === "jobseeker") {
         nevigate("/jobseeker");
+      }else if(response.data.role === "employer"){
+        nevigate("/employer")
+      }else{
+        nevigate("/admin/dashboard")
       }
     } else {
-      toast.error(response.data.msg);
+      toast.error("password does not mathced");
       setPassword("");
     }
   };

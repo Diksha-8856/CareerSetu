@@ -7,6 +7,8 @@ const enquiryRoute = require('./Routers/enquiry');
 const jobRouter = require('./Routers/jobRouter');
 const applyJobRouter = require('./Routers/applyJobRoute');
 const employerRoute = require('./Routers/EmployerRegistration');
+const countRouter = require('./Routers/Totalemp');
+const feedbackRoute = require('./Routers/feedbackRouter');
 const port = 8002
 const app = express();
 
@@ -19,5 +21,7 @@ app.use(cors())
  app.use('/api/employerpostJob',jobRouter)
  app.use('/api/applyJob',applyJobRouter)
  app.use('/api/registeremployer',employerRoute)
+ app.use('/api/TotalCount',countRouter)
+ app.use('/api/feedback',feedbackRoute)
 
 app.listen(port,()=>console.log("Server is running on "+port))

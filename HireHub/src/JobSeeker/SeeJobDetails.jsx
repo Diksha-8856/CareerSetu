@@ -1,9 +1,24 @@
 import { faBriefcase, faBuilding, faCalendar, faEnvelope, faFileLines, faGraduationCap, faLocation, faPen, faSackDollar, faTrash, faUser } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 import { Col, Row } from 'react-bootstrap'
+import { useParams } from 'react-router-dom';
 
 function SeeJobDetails() {
+  const [jobData,setJobDats] = useState([]);
+  const {id} = useParams();
+  // console.log("job ID",id)
+  const getJobDetail =async ()=>{
+    const response = await axios.get(`http://localhost:8002/api/employerpostJob/${id}`);
+    console.log(response);
+    if(response.data.msg == "Success"){
+      setJobDats(response.data.postedJob);
+    }
+  }
+  useEffect(()=>{
+    getJobDetail();
+  },[])
   return (
     <>
     <Col sm={10}  style={{
@@ -22,7 +37,7 @@ function SeeJobDetails() {
       <div className="card-body d-flex justify-content-between align-items-start flex-wrap">
         <div>
           <h2 className="job-title" style={{color:"#13357b"}}>Frontend Developer</h2>
-          <p className="company-name">Google Pvt. Ltd.</p>
+          <p className="company-name">{jobData.comName}</p>
         </div>
         <span className="status fw-semibold"> Active</span>
       </div>
@@ -35,7 +50,7 @@ function SeeJobDetails() {
             <FontAwesomeIcon icon={faBuilding} className='icon'/>
           <div>
             <p className="label" style={{color:"#13357b"}}>Company Name</p>
-            <p className="value">Google Pvt. Ltd.</p>
+            <p className="value">{jobData.comName}</p>
           </div>
         </div>
 
@@ -43,7 +58,7 @@ function SeeJobDetails() {
              <FontAwesomeIcon icon={faBriefcase} className='icon'/>
           <div>
             <p className="label" style={{color:"#13357b"}}>Job Title</p>
-            <p className="value">Frontend Developer</p>
+            <p className="value">{jobData.jobTitle}</p>
           </div>
         </div>
 
@@ -51,7 +66,7 @@ function SeeJobDetails() {
              <FontAwesomeIcon icon={faEnvelope} className='icon'/>
           <div>
             <p className="label" style={{color:"#13357b"}}>Email</p>
-            <p className="value">hr@google.com</p>
+            <p className="value">{jobData.empEmail}</p>
           </div>
         </div>
 
@@ -59,7 +74,7 @@ function SeeJobDetails() {
              <FontAwesomeIcon icon={faUser} className='icon'/>
           <div>
             <p className="label" style={{color:"#13357b"}}>Experience (In Year)</p>
-            <p className="value">2 - 4 Years</p>
+            <p className="value">{jobData.experience}</p>
           </div>
         </div>
 
@@ -67,7 +82,7 @@ function SeeJobDetails() {
              <FontAwesomeIcon icon={faGraduationCap} className='icon'/>
           <div>
             <p className="label" style={{color:"#13357b"}}>Qualification</p>
-            <p className="value">B.Tech / MCA</p>
+            <p className="value" style={{wordBreak: "break-word"}}>{jobData.qualification}</p>
           </div>
         </div>
 
@@ -75,7 +90,7 @@ function SeeJobDetails() {
              <FontAwesomeIcon icon={faSackDollar} className='icon'/>
           <div>
             <p className="label" style={{color:"#13357b"}}>Salary (Per Annum)</p>
-            <p className="value">8 - 12 LPA</p>
+            <p className="value">{jobData.salary}</p>
           </div>
         </div>
 
@@ -83,15 +98,16 @@ function SeeJobDetails() {
              <FontAwesomeIcon icon={faCalendar} className='icon'/>
           <div>
             <p className="label" style={{color:"#13357b"}}>Posted Date</p>
-            <p className="value">10 Apr 2026</p>
+            <p className="value"> {jobData.createdAt?.split("T")[0]}
+</p>
           </div>
         </div>
 
         <div className="info-item">
              <FontAwesomeIcon icon={faLocation} className='icon'/>
-          <div>
+          <div className=''>
             <p className="label" style={{color:"#13357b"}}>Address</p>
-            <p className="value">Bangalore, Karnataka, India</p>
+            <p className="value " style={{wordBreak: "break-word"}}>{jobData.comAddress}</p>
           </div>
         </div>
       </div>
@@ -105,24 +121,11 @@ function SeeJobDetails() {
           <p className="label" style={{color:"#13357b"}}>Job Description</p>
         </div>
 
-        <p className="desc-text">
-          We are looking for a skilled Frontend Developer to join our team.
-          You will be responsible for building responsive and user-friendly
-          web applications using React, JavaScript, HTML, and CSS. Collaborate
-          with designers and backend developers to deliver high-quality products.
+        <p className="desc-text" style={{wordBreak: "break-word"}}>
+          {jobData.jobDesc}
         </p>
       </div>
-
-      {/* Buttons */}
-      <div className="job-actions">
-        <button className="btn edit-btn ">
-             <FontAwesomeIcon icon={faPen} className='icon'/>
-        </button>
-        <button className="btn delete-btn">
-             <FontAwesomeIcon icon={faTrash} className='icon  text-danger'/>
-        </button>
       </div>
-    </div>
       </Col>
     </Row>
     </Col>

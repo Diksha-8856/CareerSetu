@@ -34,18 +34,18 @@ function SerachJob() {
       setUserData(response.data.job);
     }
   };
-  // console.log(userData)
+  console.log(userData)
   function logOut() {
     localStorage.removeItem("jobSeeker");
     nevigate("/login");
   }
 
-  const validate = () => {
-    if (!localStorage.getItem("jobSeeker")) {
-      toast.error("Please Login");
-      nevigate("/login");
-    }
-  };
+  // const validate = () => {
+  //   if (!localStorage.getItem("jobSeeker")) {
+  //     toast.error("Please Login");
+  //     nevigate("/login");
+  //   }
+  // };
 
     const handleSubmit = async(e) => {
     e.preventDefault();
@@ -67,7 +67,7 @@ function SerachJob() {
   };
 
   useEffect(() => {
-    validate();
+    // validate();
     getPostData();
   }, []);
   return (
@@ -177,7 +177,7 @@ function SerachJob() {
                   desc={u.jobDesc}
                   type={u.department}
                   FullTime={u.jobType}
-                  viewJob="/jobseeker/jobDetails"
+                  viewJob={`/jobseeker/jobDetails/${u._id}`}
                   OnSite={u.workMode}
                   modal={"modal"}
                   exampleModal={"#exampleModal"}

@@ -33,6 +33,8 @@ import News from "./Admin/News";
 import ViewEnq from "./Admin/ViewEnq";
 import Register from "./Pages/Register";
 import HomeJobs from "./Pages/HomeJobs";
+import Feedback from "react-bootstrap/esm/Feedback";
+import JobFeedback from "./JobSeeker/JobFeedback";
 
 function App() {
   return (
@@ -49,10 +51,11 @@ function App() {
             <Route path="" element={<JobSeekerDash />} />
             <Route path="jobseekerprofile" element={<Profile />} />
             <Route path="enq" element={<Enquiry />} />
+            <Route path="feedback" element={<JobFeedback />} />
             <Route path="searchJob" element={<SerachJob />} />
             <Route path="userapplication" element={<Jobseek_Application />} />
             <Route path="application" element={<MyApplications />} />
-            <Route path="jobDetails" element={<SeeJobDetails />} />
+            <Route path="jobDetails/:id" element={<SeeJobDetails />} />
           </Route>
           <Route path="/employer/" element={<EmpSidebar />}>
             <Route path="" element={<EmpDash />} />
@@ -61,14 +64,14 @@ function App() {
             <Route path="addEnq" element={<EmpAddEnq />} />
             <Route path="empProfile" element={<EmpProfile />} />
           </Route>
-          <Route path="/admin/" element={<AdLayout />}>
-            <Route path="/admin/dashboard" element={<AdDash />} />
-            <Route path="/admin/jobs" element={<Jobs />} />
-            <Route path="/admin/viewRecruiter" element={<AdRecruiter />} />
-            <Route path="/admin/viewJobseeker" element={<Jobseeker />} />
-            <Route path="/admin/postNews" element={<News />} />
-            <Route path="/admin/viewEnq" element={<ViewEnq />} />
-          </Route>
+        <Route path="/admin" element={<AdLayout />}>
+  <Route path="dashboard" element={<AdDash />} />
+  <Route path="jobs" element={<Jobs />} />
+  <Route path="viewRecruiter" element={<AdRecruiter />} />
+  <Route path="viewJobseeker" element={<Jobseeker />} />
+  <Route path="postNews" element={<News />} />
+  <Route path="viewEnq" element={<ViewEnq />} />
+</Route>
         </Routes>
       </BrowserRouter>
       <ToastContainer

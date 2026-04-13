@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 function Register() {
@@ -26,7 +27,7 @@ function Register() {
   const [regDate,setRegDate] = useState("")
   const [password,setPassword] = useState("")
   const [userData, setUserData] = useState([]);
-
+ const navigate = useNavigate();
   const uploadJobseekerData = async (e) => {
     e.preventDefault();
     const user = {
@@ -48,7 +49,7 @@ function Register() {
     console.log(response)
     // console.log(localStorage.getItem("jobSeeker"))
     if (response.data.msg == "Success") {
-      toast.success("Profile Data Updated");
+      toast.success("SuccessFully Registered");
       setFullName("");
       setLocation("");
       setPhone("");
@@ -59,6 +60,7 @@ function Register() {
       setExpreince("");
       setGender("");
       setPassword("");
+      navigate("/")
     }
   };
   const uploadEmployeerData = async(e)=>{
@@ -67,7 +69,7 @@ function Register() {
       const response = await axios.post(`http://localhost:8002/api/registeremployer/`, empData);
       console.log(response)
       if(response.data.msg == "Success"){
-        toast.success("SuccussFully Registered");
+        toast.success("SuccessFully Registered");
         setComName("")
         setComWork("")
         setComAddress("")
@@ -78,6 +80,7 @@ function Register() {
         setPanNum("")
         setGstNum("")
         setPassword("")
+         navigate("/")
       }
   }
   return (
@@ -207,10 +210,10 @@ function Register() {
               <div className="col-md-6 mb-3">
                 <label className="form-label">Password</label>
                 <input
-                  type="text"
+                  type="password"
                   className="form-control"
                   value={password}
-                  onChange={(e) => setPanNum(e.target.value)}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
             </div>

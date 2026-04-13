@@ -3,6 +3,8 @@ import { Col, Row, Table, Button } from 'react-bootstrap'
 import adminPro from '../assets/shagun.jpeg'
 import { AllCommunityModule, ModuleRegistry } from 'ag-charts-community';
 import { AgCharts } from 'ag-charts-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 ModuleRegistry.registerModules([AllCommunityModule]);
 
@@ -77,7 +79,7 @@ function AdDash() {
       {/* HEADER */}
       <Row className='align-items-center px-3 py-2 bg-light shadow-sm'>
         <Col sm={2}>
-          <button className="btn btn-light btn-sm shadow">☰</button>
+          <button className="btn btn-light btn-sm fw-bold"><FontAwesomeIcon icon={faBars}/></button>
         </Col>
 
         <Col sm={6}>
@@ -114,10 +116,10 @@ function AdDash() {
           { title: "Total Enquiries", value: "26+", color: "#eaf4fd" },
         ].map((item, i) => (
           <Col md={4} className="mb-3" key={i}>
-            <div className="card text-center"  style={{ backgroundColor: item.color + " !important" }}>
+            <div className="card text-center " style={{backgroundColor:`${item.color}`}} >
               <div className="card-body">
                 <h3>{item.value}</h3>
-                <p>{item.title}</p>
+                <p className='text-center m-0'>{item.title}</p>
               </div>
             </div>
           </Col>

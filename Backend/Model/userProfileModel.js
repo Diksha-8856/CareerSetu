@@ -6,6 +6,7 @@ const userProfileSchema = mongoose.Schema({
     },
     role:{
         type:String,
+        default:"jobseeker"
     },
     about:{
         type:String,

@@ -11,7 +11,8 @@ const empSchema = mongoose.Schema({
     panNum: {type: String, required: true},  //company's PAN num
     gstNum: {type: String, required: true},
     regDate: {type: String, default: Date.now },   // ✅ auto fill on create jb employer portal pr register kia h vo
-    password: {type: String, required: true}
+    password: {type: String, required: true},
+    role:{type:String,default:"employer"}
 }, {timestamps: true});
 
 module.exports = mongoose.model("employer", empSchema);

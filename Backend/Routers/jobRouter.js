@@ -17,6 +17,7 @@ jobRouter.post("/",async(req,res)=>{
 })
 jobRouter.put('/:id',async(req,res)=>{
     const ID = req.params.id;
+    
    const user = await employeerModel.findByIdAndUpdate(ID,req.body);
    return res.send({"msg":"Success", user});
 })
